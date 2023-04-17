@@ -91,43 +91,13 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 
-"""""
+f[(d > d_min) & (d < d_mean)] = 25
+f[(d > d_mean) & (d < d_max)] = 75
+f[d == d_mean] = 50
+f[d == d_min] = 0
+f[d == d_max] = 100
 
-prueba = d.flatten()
-print(prueba)
 
-for i in prueba:
-    if prueba[i] > d_min and prueba[i] < d_mean:
-        f[i] = 25
-    elif prueba[i] > d_mean and prueba[i] < d_max:
-        f[i] = 75
-    elif prueba[i] == d_mean:
-        f[i] = 50
-    elif prueba[i] == d_min:
-        f[i] = 0
-    elif prueba[i] == d_max:
-        f[i] = 100
-
-print(f)
-
-"""
-
-"""""
-for i in range(len(d)):
-    if d[i] > d_min & d[i] < d_mean:
-        f[i] = 25
-    elif d[i] > d_mean & d[i] < d_max:
-        f[i] = 75
-    elif d[i] == d_mean:
-        f[i] = 50
-    elif d[i] == d_min:
-        f[i] = 0
-    elif d[i] == d_max:
-        f[i] = 100
-
-print(f)
-
-"""
 
 """
 #17. Print d and f. Do you have your expected f?
@@ -149,7 +119,8 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
-
+print(a)
+print(f)
 
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
@@ -163,3 +134,14 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+
+f = np.empty_like(d, dtype='U1')
+
+f[(d > d_min) & (d < d_mean)] = 'B'
+f[(d > d_mean) & (d < d_max)] = 'D'
+f[d == d_mean] = 'C'
+f[d == d_min] = 'A'
+f[d == d_max] = 'E'
+
+
+print(f)
