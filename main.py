@@ -68,9 +68,7 @@ d_mean = d.mean()
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-
 f = np.empty_like(d)
-
 
 
 """
@@ -83,7 +81,22 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 
+#No consigo encontrar la solucion, tampoco con GPT
+#ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
 
+f = [0] * len(d)  # Para que f empiece con 0
+
+for i in range(len(d)):
+        if d[i] == d_min:
+                f[i] = 0
+        elif d_min < d[i] < d_mean:
+                f[i] = 25
+        elif d[i] == d_mean:
+                f[i] = 50
+        elif d_mean < d[i] < d_max:
+                f[i] = 75
+        elif d[i] == d_max:
+                f[i] = 100
 
 
 """
@@ -106,6 +119,10 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
+
+#Al no conseguir responder bien el anterior, no puedo tener esta solucion.
+print(d)
+print(f)
 
 
 """
