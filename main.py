@@ -1,3 +1,9 @@
+'''''
+esta en el main.ipynb
+
+'''''
+
+
 #1. Import the NUMPY package under the name np.
 
 
