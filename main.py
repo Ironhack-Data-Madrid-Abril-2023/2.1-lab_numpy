@@ -135,13 +135,15 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
 Again, you don't need Numpy in this question.
 """
 
-f = np.empty_like(d, dtype='U1')
-
-f[(d > d_min) & (d < d_mean)] = 'B'
-f[(d > d_mean) & (d < d_max)] = 'D'
-f[d == d_mean] = 'C'
-f[d == d_min] = 'A'
-f[d == d_max] = 'E'
+f_str = f.astype(str)
 
 
-print(f)
+
+f_str[(d > d_min) & (d < d_mean)] = 'B'
+f_str[(d > d_mean) & (d < d_max)] = 'D'
+f_str[d == d_mean] = 'C'
+f_str[d == d_min] = 'A'
+f_str[d == d_max] = 'E'
+
+
+print(f_str)
