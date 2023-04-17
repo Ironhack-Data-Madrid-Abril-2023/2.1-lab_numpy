@@ -1,68 +1,51 @@
-#1. Import the NUMPY package under the name np.
+# 1. Import the NUMPY package under the name np.
 
+import numpy as np
 
+# 2. Print the NUMPY version and the configuration.
 
-#2. Print the NUMPY version and the configuration.
+print(np.version.version)
 
-
-
-#3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
+# 3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
 
+a = np.array()
+
+# 4. Print a.
 
 
-#4. Print a.
+# 5. Create a 5x2x3 3-dimensional array with all values equaling 1.
+# Assign the array to variable "b"
 
 
-
-#5. Create a 5x2x3 3-dimensional array with all values equaling 1.
-#Assign the array to variable "b"
+# 6. Print b.
 
 
-
-#6. Print b.
-
+# 7. Do a and b have the same size? How do you prove that in Python code?
 
 
-#7. Do a and b have the same size? How do you prove that in Python code?
+# 8. Are you able to add a and b? Why or why not?
 
 
+# 9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
 
-#8. Are you able to add a and b? Why or why not?
+# 10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
 
 
-
-#9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
-
+# 11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
 
-#10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
+# 12. Multiply a and c. Assign the result to e.
 
 
-
-#11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
-
+# 13. Does e equal to a? Why or why not?
 
 
-
-#12. Multiply a and c. Assign the result to e.
-
+# 14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
 
-#13. Does e equal to a? Why or why not?
-
-
-
-
-#14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
-
-
-
-
-#15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
-
-
+# 15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
 
 """
@@ -74,8 +57,6 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
-
-
 
 
 """
