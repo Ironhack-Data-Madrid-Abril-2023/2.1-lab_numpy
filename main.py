@@ -1,68 +1,84 @@
 #1. Import the NUMPY package under the name np.
 
-
+import numpy as np
 
 #2. Print the NUMPY version and the configuration.
 
+print("Versión de Python", np.__version__)
 
+np.show_config()
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
 
-
+a = np.random.random((2, 3, 5))
 
 #4. Print a.
 
-
+print(f"Matriz a ----- {a}")
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
 
-
+b = np.ones((5, 2, 3))
 
 #6. Print b.
 
-
+print(f"Matriz b ----- {b}")
 
 #7. Do a and b have the same size? How do you prove that in Python code?
 
-
-
+if a.size == b.size:
+    print(f"El tamaño de a y b es el mismo, con un tamaño de {a.size}.")
+else:
+    print(f"a tiene un tamaño de {a.size} y b tiene un tamaño de {b.size}, por lo que tienen tamaños diferentes.")
 
 #8. Are you able to add a and b? Why or why not?
 
-
+# I did use this syntax np.add(a, b), although it does prompt an error that suggests both matrices can´t be added to each other as their shape is different.
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
+c = b.T.reshape(2, 3, 5)
 
+print(c)
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
-
-
+d = np.add(a, c) #It does work because they both a and c have the same shape.
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
+print(f"Matriz a ----- {a}")
 
+print(f"Matriz d ----- {d}")
 
 
 #12. Multiply a and c. Assign the result to e.
 
+# e = np.dot(a, c)
 
+# print(e)
 
 #13. Does e equal to a? Why or why not?
 
-
-
+#Both are not equal and the product of both matrices can´t be done as the number of columns of e is different than the number of rows of a.   
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
+d_max = d.max()
 
+d_min = d.min()
+
+d_mean = d.mean()
+
+print(f"El maximo de d es {d_max}, el mínimo es {d_min} y la media es {d_mean}.")
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
+print(f"La forma de d es {d.shape}.")
 
+f = np.empty((2, 3, 5))
 
 
 """
