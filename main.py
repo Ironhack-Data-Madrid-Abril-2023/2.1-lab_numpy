@@ -95,7 +95,26 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 
+# creamos una nueva matriz f con las mismas dimensiones que d
+f = np.empty_like(d)
 
+# recorremos todos los valores en d y asignamos nuevos valores en la matriz f según las condiciones
+for i in range(d.shape[0]):
+    for j in range(d.shape[1]):
+        for k in range(d.shape[2]):
+            if d[i][j][k] > d_min and d[i][j][k] < d_mean:
+                f[i][j][k] = 25
+            elif d[i][j][k] > d_mean and d[i][j][k] < d_max:
+                f[i][j][k] = 75
+            elif d[i][j][k] == d_mean:
+                f[i][j][k] = 50
+            elif d[i][j][k] == d_min:
+                f[i][j][k] = 0
+            elif d[i][j][k] == d_max:
+                f[i][j][k] = 100
+
+# imprimimos los valores de la nueva matriz f
+print("Este es --------------> f", f)
 
 
 """
@@ -119,6 +138,8 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
 
+print("Este es ---------->d", d)
+print("Este es -----------> f", f)
 
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
@@ -132,3 +153,27 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+
+d_min = np.min(d)
+d_max = np.max(d)
+d_mean = np.mean(d)
+
+labels = {0: 'A', 25: 'B', 50: 'C', 75: 'D', 100: 'E'}
+
+f = np.empty_like(d, dtype='U1')
+
+for i in range(d.shape[0]):
+    for j in range(d.shape[1]):
+        for k in range(d.shape[2]):
+            if d[i,j,k] == d_min:
+                f[i,j,k] = labels[0]
+            elif d_min < d[i,j,k] < d_mean:
+                f[i,j,k] = labels[25]
+            elif d_mean < d[i,j,k] < d_max:
+                f[i,j,k] = labels[75]
+            elif d[i,j,k] == d_mean:
+                f[i,j,k] = labels[50]
+            elif d[i,j,k] == d_max:
+                f[i,j,k] = labels[100]
+                
+print("Este es ----------->f ", f)
