@@ -136,8 +136,10 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
-g = np.empty((f.shape))
+g = f.astype(str)
 
 g[d == d_min] = 'A'
-g[(d > d_min) & (d < d_mean)]
-g.describe()
+g[(d > d_min) & (d < d_mean)] = 'B'
+g[d == d_mean] = 'C'
+g[(d > d_mean) & (d < d_max)] = 'D'
+g[d == d_max] = 'E'
